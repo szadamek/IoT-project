@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aggregate Data</title>
+  </head>
+  <body>
+    <h1 style="color: red; font-size: 36px;">Aggregate Data</h1>
+    <table style="border: 1px solid black;">
+      <tr>
+        <th style="border: 1px solid black;">Generator ID</th>
+        <th style="border: 1px solid black;">Average</th>
+      </tr>
+      {% for generator_id, average in data.items() %}
+      <tr>
+        <td style="border: 1px solid black;">{{ generator_id }}</td>
+        <td style="border: 1px solid black;">{{ average }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

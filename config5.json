@@ -1,0 +1,1 @@
+{"type_of_send": "http", "address": "http://127.0.0.1:5000/get_file", "frequency": "10", "ip": "http://127.0.0.1:8004", "file_name": "taktxt", "change": "start"}

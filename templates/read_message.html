@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wiadomości</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      h1 {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+
+      a {
+        color: #0000FF;
+        text-decoration: none;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        list-style: none;
+        padding: 10px;
+      }
+
+      a:hover {
+        color: #000088;
+      }
+
+      form {
+        margin: 20px 0;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      select, input[type="submit"] {
+        display: block;
+        margin: 10px 0;
+        padding: 8px;
+      }
+    </style>
+</head>
+<body>
+    <h1><a href="http://127.0.0.1:5000">Strona główna</a></h1>
+    <h2>Podaj nazwę pliku, który Cię interesuje: </h2>
+        <form method="POST">
+            <label for="files">Plik:</label>
+            <select name="choose_file" id="files">
+                {% for x in files_names %}
+                <option value={{x}}>{{x}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit">
+        </form>
+    <p>Wczytano: {{input_text}}</p>
+    <ul style="list-style: none;">
+            {% for x in message %}
+        <li>
+            {{x}}
+        </li>
+            {% endfor %}
+    </ul>
+</body>
+</html>
